@@ -97,4 +97,6 @@ body{
  .hr{
      border-top: 3px solid #000;
  }
- 
+ .container-fluid{
+     text-align: center;
+ }
