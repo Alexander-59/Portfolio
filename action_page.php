@@ -5,6 +5,7 @@ $email = $_POST["Email"];
 $sub =$_POST["Subject"];
 $msg = $_POST["Message"];
 
+/* CSV FILE
 echo $_POST['Name'];
 
 echo ($name);
@@ -16,5 +17,12 @@ $order = array(
 );
 
 fputcsv($new_csv,$order);
+*/
+
+date_default_timezone_set('Asia/Dhaka');
+$time = date('Y-m-d H:i:s');
+
+$sinsert = 'INSERT'
+
 
 ?>
