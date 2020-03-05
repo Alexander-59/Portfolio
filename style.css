@@ -100,3 +100,7 @@ body{
  .container-fluid{
      text-align: center;
  }
+ .jumbotron{
+     background: #ffeaa7;
+     margin-top: 5px;
+ }

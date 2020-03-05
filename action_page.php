@@ -1,5 +1,8 @@
 <?php
 
+include_once('db_conn.php');
+
+
 $name = $_POST["Name"];
 $email = $_POST["Email"];
 $sub =$_POST["Subject"];
@@ -22,7 +25,15 @@ fputcsv($new_csv,$order);
 date_default_timezone_set('Asia/Dhaka');
 $time = date('Y-m-d H:i:s');
 
-$sinsert = 'INSERT'
+$sinsert = "INSERT INTO `feedback` (name,email,subject,message) VALUES ('$name','$email','$sub','$msg')";
 
+if(!mysqli_query($conn,$sinsert)){
+    echo 'Not Inserted!';
+}
+else{
+    echo 'Inserted';
+}
+
+header("refresh:2; url=feedback.html");
 
 ?>
