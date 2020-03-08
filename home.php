@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
         </li>
 
         <li class="nav-item dropdown">
@@ -58,13 +58,13 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="Photos/photo3.JPG" alt="First slide">
+        <img class="d-block w-100" src="Photos/photo2.jpg" alt="First slide">
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="Photos/photo1.jpg" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="Photos/photo2.jpg" alt="Third slide">
+        <img class="d-block w-100" src="Photos/photo3.JPG" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -76,17 +76,39 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
+  
+  
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h2>
-        Being a computer science student, I want to apply my knowledge in Agriculture to grow safe food for future and I also want to work on Climate change for a better World!.
-      </h2>
 
-      <blockquote>Happiness is a state of mind and only real when shared.</blockquote>
+    <?php
+      include_once('db_conn.php');
+
+      $sql = "SELECT name, objective, quote FROM `home`";
+      $result = mysqli_query($conn, $sql);
+
+      if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+
+    ?>
+
+      <h2><?php echo  $row['name'] ; ?> </h2> <br>
+      <h2> <?php echo $row['objective']; ?> </h2> <br>
+      <blockquote> <?php echo $row['quote']; ?> </blockquote> 
+
+      <?php 
+  } 
+  ?>
+
     </div>
   </div>
+  
+  <?php
+  mysqli_close($conn);
+  ?>
+  
 
   <!--
 <div class="wc" id="welcome">

@@ -31,9 +31,9 @@ if(!mysqli_query($conn,$sinsert)){
     echo 'Not Inserted!';
 }
 else{
-    echo 'Inserted';
+    header("refresh:2; url=feedback.html");
 }
 
-header("refresh:2; url=feedback.html");
+
 
 ?>
