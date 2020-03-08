@@ -77,12 +77,7 @@
     </a>
   </div>
   
-  
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-
-    <?php
+  <?php
       include_once('db_conn.php');
 
       $sql = "SELECT name, objective, quote FROM `home`";
@@ -94,20 +89,21 @@
 
     ?>
 
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+
       <h2><?php echo  $row['name'] ; ?> </h2> <br>
       <h2> <?php echo $row['objective']; ?> </h2> <br>
       <blockquote> <?php echo $row['quote']; ?> </blockquote> 
 
-      <?php 
-  } 
-  ?>
-
     </div>
   </div>
+
   
   <?php
-  mysqli_close($conn);
-  ?>
+     } 
+      mysqli_close($conn);
+?>
   
 
   <!--
